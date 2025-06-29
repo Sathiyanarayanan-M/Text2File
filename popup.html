@@ -1,30 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <title>Text2File</title>
     <style>
       body {
-        font-family: Arial;
-        padding: 10px;
-        width: 300px;
+        font-family: "Segoe UI", sans-serif;
+        padding: 16px;
+        width: 320px;
+        background-color: #f9fafb;
+        color: #111827;
       }
+
+      .input,
       textarea {
         width: 100%;
-        height: 100px;
+        padding: 10px 12px;
+        margin-bottom: 12px;
+        font-size: 14px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        background-color: white;
+        outline: none;
+        box-sizing: border-box;
       }
-      input[type="text"] {
+
+      .input:focus,
+      textarea:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+      }
+
+      textarea {
+        height: 120px;
+        resize: vertical;
+      }
+
+      button {
         width: 100%;
-        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #2563eb;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      button:hover {
+        background-color: #1d4ed8;
+      }
+
+      .label {
+        font-size: 13px;
+        margin-bottom: 4px;
+        color: #374151;
       }
     </style>
   </head>
   <body>
+    <label class="label" for="filename">File Name</label>
+    <input
+      type="text"
+      id="filename"
+      class="input"
+      placeholder="Enter file name"
+    />
 
-    <input type="text" id="filename" placeholder="Enter file name" />
-    <input type="file" id="ffiillee" hidden style="display: none;" />
+    <label class="label" for="filecontent">File Content</label>
     <textarea
       id="filecontent"
-      placeholder="Paste your long text here"
+      placeholder="Paste your long text here..."
     ></textarea>
+
+    <input type="file" id="ffiillee" hidden />
+
     <button id="send">Send</button>
 
     <script src="popup.js"></script>
