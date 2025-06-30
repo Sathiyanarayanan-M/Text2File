@@ -1,25 +1,25 @@
-# ChatFile - Google Chat Long Text File Sender
+# Text2File - Long Text File Sender
 
-**ChatFile** is a lightweight Chrome extension that allows you to send long messages in Google Chat and Gmail Chat by converting them into a virtual text file. This bypasses the 12,000-character limit and attaches the content as a file, ready to send.
+**Text2File** is a lightweight Chrome extension that lets you send long messages by converting them into a downloadable file. It bypasses character limits by automatically attaching the content as a file — ready to send in apps like Google Chat, Slack, ChatGPT, etc.
 
 ---
 
 ## 🚀 Features
 
-- Paste large text content and give it a filename
-- Instantly creates a virtual `.txt` file
-- Automatically attaches the file to the chat's file input
-- Works on both `chat.google.com` and Gmail's embedded Chat (`mail.google.com`)
+* Paste long text and give it a custom filename
+* Instantly generates a virtual `.txt` file (or any custom extension)
+* Automatically attaches the file to the file input field
+* Works with any application that supports file uploads (e.g., Google Chat, Slack, ChatGPT, etc.)
 
 ---
 
 ## 📦 Installation (Developer Mode)
 
 1. Clone or download this repository.
-2. Go to `chrome://extensions` in your browser.
-3. Enable **Developer mode** (top right).
-4. Click **"Load unpacked"** and select the extension folder.
-5. Pin the extension for quick access.
+2. Go to `chrome://extensions` in your Chrome browser.
+3. Enable **Developer mode** (toggle at the top right).
+4. Click **“Load unpacked”** and select the extension folder.
+5. Pin the extension icon for quick access.
 
 ---
 
@@ -27,60 +27,50 @@
 
 ![TEXT2FILE](text2file.png)
 
-
----
-
-
-## Demo
-
-![TEXT2FILE](text2file.gif)
-
-
 ---
 
 ## 🧪 How to Use
 
-1. Open a chat conversation in **Google Chat** or **Gmail Chat**.
-2. Click the ChatFile extension icon.
-3. Enter:
-   - **File Name**: (e.g., `meeting-notes.txt`)
-   - **Long Text Content**: Paste your full message here.
+1. Open the web application where you want to upload the file.
+2. Click the **Text2File** extension icon.
+3. Fill in the fields:
+
+   * **File Name** (e.g., `meeting-notes.txt`)
+   * **Long Text Content**: Paste your full message here
 4. Click **Send**.
-5. The file will be attached to the current chat file input — just press **Enter** or click **Send**.
+5. The file will be attached to the file input — simply press **Enter** or click **Send** in the app.
 
 ---
 
 ## 🔒 Permissions
 
-| Permission                  | Why it's needed                            |
-| --------------------------- | ------------------------------------------ |
-| `activeTab`                 | To inject script into current chat tab     |
-| `scripting`                 | To inject the virtual file into file input |
-| `https://chat.google.com/*` | To access standalone Google Chat           |
-| `https://mail.google.com/*` | To access embedded Gmail Chat              |
+| Permission  | Purpose                                           |
+| ----------- | ------------------------------------------------- |
+| `activeTab` | To inject the script into the current browser tab |
+| `scripting` | To simulate the file upload behavior              |
+| `storage`   | To save input data locally for reuse              |
 
 ---
 
-## 📁 Project Structure
+## 🪧 Demo
 
-```
-google-chat-extension/
-├── manifest.json # Chrome extension manifest
-├── popup.html # Popup UI for input
-├── popup.js # Handles form and injection logic
-├── content.js # Optional for dynamic content filtering
-└── README.md # You are here
-```
+* Demo on Google Chat:
 
----
+![TEXT2FILE](assets/gChatDemo.gif)
 
-## ⚠️ Limitations
+* Demo on Slack:
 
-- Chrome extensions cannot read the `#fragment` part of a URL in `manifest.json`, so we filter Gmail Chat using `location.hash` inside `content.js`.
-- Make sure the chat window is open and active before clicking "Send".
+![TEXT2FILE](assets/slackDemo.gif)
+
+* Demo on Teams:
+
+> Note: Teams hides the file input by default. You may need to click the attachment icon first to reveal the file input so the extension can inject the file.
+
+![TEXT2FILE](assets/teamsDemo.gif)
 
 ---
+
 
 ## 📄 License
 
-MIT License. Free for personal and commercial use.
+MIT License — Free to use for both personal and commercial projects.

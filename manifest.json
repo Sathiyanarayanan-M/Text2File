@@ -2,8 +2,8 @@
   "manifest_version": 3,
   "name": "Text2File",
   "version": "1.0",
-  "description": "Send long text as a file in Google Chat and Gmail Chat.",
-  "permissions": ["scripting", "activeTab"],
+  "description": "Convert long text into a virtual file and instantly attach it in chat apps like Google Chat, Slack, ChatGPT, etc.",
+  "permissions": ["scripting", "activeTab", "storage"],
   "action": {
     "default_popup": "popup.html"
   },
@@ -16,7 +16,7 @@
 
   "content_scripts": [
     {
-      "matches": ["https://chat.google.com/*", "https://mail.google.com/*"],
+      "matches": ["<all_urls>"],
       "js": ["content.js"],
       "all_frames": true,
       "run_at": "document_idle"
