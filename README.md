@@ -1,6 +1,6 @@
 # Text2File - Long Text File Sender
 
-**Text2File** is a lightweight Chrome extension that lets you send long messages by converting them into a downloadable file. It bypasses character limits by automatically attaching the content as a file — ready to send in apps like Google Chat, Slack, ChatGPT, etc.
+**Text2File** is a lightweight browser extension that lets you send long messages by converting them into a downloadable file. It bypasses character limits by automatically attaching the content as a file — ready to send in apps like Google Chat, Slack, ChatGPT, etc.
 
 ---
 
@@ -44,11 +44,11 @@
 
 ## 🔒 Permissions
 
-| Permission  | Purpose                                           |
-| ----------- | ------------------------------------------------- |
-| `activeTab` | To inject the script into the current browser tab |
-| `scripting` | To simulate the file upload behavior              |
-| `storage`   | To save input data locally for reuse              |
+| Permission                  | Why it's needed                            |
+| --------------------------- | ------------------------------------------ |
+| `activeTab`                 | To inject script into current chat tab     |
+| `scripting`                 | To inject the virtual file into file input |
+| `<all_urls>` (host permission) | To allow the extension to run on all websites and chat platforms |
 
 ---
 
