@@ -3,7 +3,7 @@
   "name": "Text2File",
   "version": "1.0",
   "description": "Convert long text into a virtual file and instantly attach it in chat apps like Google Chat, Slack, ChatGPT, etc.",
-  "permissions": ["scripting", "activeTab", "storage"],
+  "permissions": ["activeTab", "storage"],
   "action": {
     "default_popup": "popup.html"
   },
